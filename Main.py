@@ -1,6 +1,4 @@
-#!/usr/bin/python
-# -*-coding:utf8 -*
-
+__author__ = 'atef'
 import twitter
 
 CONSUMER_KEY = 'wgzlyeAmjeYKg8QZGPAmeqLhG'
@@ -11,5 +9,11 @@ auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET,
 CONSUMER_KEY, CONSUMER_SECRET)
 twitter_api = twitter.Twitter(auth=auth)
 
+WORLD_WOE_ID = 1
+US_WOE_ID = 23424977
 
-
+world_trends = twitter_api.trends.place(_id=WORLD_WOE_ID)
+us_trends = twitter_api.trends.place(_id=US_WOE_ID)
+print world_trends
+print
+print us_trends
